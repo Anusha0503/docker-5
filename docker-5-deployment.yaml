@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: docker-5-container
-        image: mydocker1405/docker-5:2
+        image: 045193383710.dkr.ecr.us-east-1.amazonaws.com/docker-5:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
