@@ -17,6 +17,6 @@ spec:
         image: 045193383710.dkr.ecr.us-east-1.amazonaws.com/docker-5:v1
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
       imagePullSecrets:
         - name: springboot1secret
