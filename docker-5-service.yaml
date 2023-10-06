@@ -8,5 +8,5 @@ spec:
     app: docker-5
   ports:
   - port: 9096
-    targetPort: 8080
+    targetPort: 8000
     protocol: TCP
