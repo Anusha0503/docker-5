@@ -17,8 +17,9 @@ node {
       sh " docker push 045193383710.dkr.ecr.us-east-1.amazonaws.com/docker-5:v1"        
     }
     stage (' deploy to EKS'){
-    withAWS(credentials: 'aws-creds', endpointUrl: 'https://5A9D5DB5734E7751B34DDDB3A2B098DC.gr7.us-east-1.eks.amazonaws.com', region: 'us-east-1') {
-     sh " aws eks --region us-east-1 update-kubeconfig --name new-eks-cluster"
+    withKubeConfig(caCertificate: '', clusterName: 'new-eks-cluster', contextName: '', credentialsId: 'EKS-kube-config', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://5A9D5DB5734E7751B34DDDB3A2B098DC.gr7.us-east-1.eks.amazonaws.com') {
+    sh " aws eks --region us-east-1 update-kubeconfig --name new-eks-cluster"
+}
 }
     }
           }
