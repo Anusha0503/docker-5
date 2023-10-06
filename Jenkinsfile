@@ -19,6 +19,7 @@ node {
     stage (' deploy to EKS'){
     withKubeConfig(caCertificate: '', clusterName: 'new-eks-cluster', contextName: '', credentialsId: 'EKS-kube-config', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://5A9D5DB5734E7751B34DDDB3A2B098DC.gr7.us-east-1.eks.amazonaws.com') {
     sh " aws eks --region us-east-1 update-kubeconfig --name new-eks-cluster"
+    sh " kubectl get node"
 }
 }
     }
